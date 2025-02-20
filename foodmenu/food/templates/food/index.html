@@ -13,7 +13,28 @@
 </head>
 <body>
     {% block body %}
-        {% for item in item_list %}
+
+   {% for item in item_list %}
+        <div class="row align-items-center mb-4">
+            <div class="col-md-3 offset-md-2 text-center">
+                <img class="img-fluid rounded shadow-sm" src="{{ item.item_image }}" 
+                    alt="Food Image" style="max-height: 150px; width: auto;">
+            </div>
+            <div class="col-md-4">
+                <h3 class="fw-bold">{{ item.itemname }}</h3>
+                <h5 class="text-muted">{{ item.itemdesc }}</h5>
+                <h6 class="text-success fw-semibold">${{ item.itemprice }}</h6>
+            </div>
+            <div class="col-md-2 text-center">
+                <a href="{% url 'food:detail' item.id %}" class="btn btn-success">Details</a>
+            </div>
+        </div>
+    {% endfor %}
+
+
+
+    {% comment %} This is old code {% endcomment %}
+        {% comment %} {% for item in item_list %}
 
             <ul>
                 <li>
@@ -21,7 +42,7 @@
                 </li>
             </ul>
 
-        {% endfor %}
+        {% endfor %} {% endcomment %}
     {% endblock %}
 
 </body>

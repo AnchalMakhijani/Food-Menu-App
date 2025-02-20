@@ -1,0 +1,9 @@
+{% comment %} {% extends "food/base.html" %} {% endcomment %}
+
+{% comment %} {% block body %} {% endcomment %}
+<form method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Sign Up</button>
+</form>
+{% comment %} {% endblock %} {% endcomment %}
