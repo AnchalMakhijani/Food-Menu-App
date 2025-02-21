@@ -24,6 +24,7 @@
                 <h3 class="fw-bold">{{ item.itemname }}</h3>
                 <h5 class="text-muted">{{ item.itemdesc }}</h5>
                 <h6 class="text-success fw-semibold">${{ item.itemprice }}</h6>
+                <h6>{{ item.username }}</h6>
             </div>
             <div class="col-md-2 text-center">
                 <a href="{% url 'food:detail' item.id %}" class="btn btn-success">Details</a>
