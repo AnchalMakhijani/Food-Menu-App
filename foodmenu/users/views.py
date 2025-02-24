@@ -19,10 +19,13 @@ def register(request):
     return render(request, 'users/register.html', {'form':form})
 
 
+@login_required
 def logout_view(request):
+    if request.user.is_authenticated:  # Check if user is logged in
+        username = request.user.username
+        messages.success(request, f"{username}, you have been logged out successfully.")
     logout(request)
-
-    return render(request, "users/logout.html")
+    return redirect("food:index")
 
 
 @login_required

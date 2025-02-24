@@ -1,9 +1,40 @@
 {% extends "food/base.html" %}
 
 {% block body %}
-<form action="" method="POST">
-    {% csrf_token %}
-    {{ form }}
-    <button type="submit">Save</button>
-</form>
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow-lg p-5 border-0 rounded-4" 
+         style="width: 400px;">
+        <h2 class="fw-bold text-center">Add New Item</h2>
+        <p class="text-muted text-center">Fill in the details to add a new item.</p>
+
+        <form method="POST">
+            {% csrf_token %}
+            
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Item Name</label>
+                {{ form.itemname }}
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Item Description</label>
+                {{ form.itemdesc }}
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Item Price</label>
+                {{ form.itemprice }}
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Item Image</label>
+                {{ form.item_image }}
+            </div>
+
+            <button type="submit" class="btn w-100 rounded-pill text-white" 
+                    style="background-color: #6c63ff;">
+                Add Item
+            </button>
+        </form>
+    </div>
+</div>
 {% endblock %}

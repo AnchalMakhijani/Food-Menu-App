@@ -1,19 +1,40 @@
 {% extends "food/base.html" %}
 
 {% block body %}
-    <div class="container mt-5">
-        <div class="row align-items-center">
-            <div class="col-md-6 text-center">
-                <img src="{{ object.item_image }}" alt="Food Image" 
-                     class="img-fluid rounded shadow-sm" 
-                     style="max-height: 300px; width: auto;">
-            </div>
-            <div class="col-md-6">
-                <h1 class="fw-bold">{{ object.itemname }}</h1>
-                <h2 class="text-muted">{{ object.itemdesc }}</h2>
-                <h3 class="text-success fw-semibold">${{ object.itemprice }}</h3>
-                <a href="{% url 'food:delete_item' object.id %}">Delete</a>
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+                <div class="row g-0 align-items-center">
+                    
+                    <!-- Image Section -->
+                    <div class="col-md-5">
+                        <img src="{{ object.item_image }}" alt="Food Image"
+                             class="img-fluid w-100 h-100" 
+                             style="object-fit: cover; max-height: 350px;">
+                    </div>
+
+                    <!-- Details Section -->
+                    <div class="col-md-7 p-4">
+                        <h2 class="fw-bold">{{ object.itemname }}</h2>
+                        <p class="text-muted fs-5">{{ object.itemdesc }}</p>
+                        <h4 class="text-success fw-semibold">${{ object.itemprice }}</h4>
+
+                        <div class="mt-4">
+                            <a href="{% url 'food:delete_item' object.id %}" 
+                               class="btn btn-danger rounded-pill px-4">
+                                <i class="bi bi-trash"></i> Delete
+                            </a>
+                            <a href="{% url 'food:index' %}" 
+                               class="btn btn-outline-secondary rounded-pill px-4">
+                                <i class="bi bi-arrow-left"></i> Back to Menu
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
         </div>
     </div>
+</div>
 {% endblock %}

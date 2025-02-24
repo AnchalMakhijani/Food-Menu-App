@@ -1,6 +1,62 @@
+/* ========== GLOBAL STYLES ========== */
 body {
-    background-color: black;
+    background-color: #f8f9fa; /* Light Gray Background */
+    font-family: 'Poppins', sans-serif;
+    color: #333; /* Default Text Color */
 }
-a{
-    color: violet;
+
+/* ========== HEADINGS ========== */
+h2 {
+    font-weight: bold;
+    color: #002147; /* Oxford Blue (Secondary Color) */
+}
+
+/* ========== BUTTON STYLES ========== */
+.btn-primary {
+    background-color: #21c9c6; /* Aqua (Primary Color) */
+    border-color: #21c9c6;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #1ba9a6;
+    border-color: #1ba9a6;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #bb2d3b;
+}
+
+/* ========== CARD STYLES ========== */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+    background-color: white !important;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #002147 !important;
+}
+
+/* ========== FORM INPUTS ========== */
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+}
+
+.form-control:focus {
+    border-color: #21c9c6;
+    box-shadow: 0 0 5px rgba(33, 201, 198, 0.5);
 }

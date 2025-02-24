@@ -1,2 +1,23 @@
-<h1>{{ user.username }}</h1>
-<img src="{{ user.profile.image.url }}" alt="Profile IMG" width="100px" height="100px">
+{% extends "food/base.html" %}
+
+{% block body %}
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow-lg p-4 border-0 rounded-4 text-center" 
+         style="width: 400px;">
+        
+        <!-- Profile Image -->
+        <img src="{{ user.profile.image.url }}" alt="Profile IMG" 
+             class="rounded-circle border" width="120px" height="120px">
+
+        <!-- User Details -->
+        <h2 class="fw-bold mt-3">{{ user.username }}</h2>
+        <p class="text-muted">{{ user.email }}</p>
+
+        <!-- Logout Button -->
+        <a href="{% url 'logout' %}" class="btn w-100 rounded-pill text-white" 
+           style="background-color: #6c63ff;">
+            Logout
+        </a>
+    </div>
+</div>
+{% endblock %}
